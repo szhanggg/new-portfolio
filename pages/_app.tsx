@@ -3,10 +3,10 @@ import type { AppProps } from "next/app";
 
 import { AnimatePresence } from "framer-motion";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <AnimatePresence exitBeforeEnter>
-      <Component {...pageProps} />;
+      <Component {...pageProps} key={router.route} />;
     </AnimatePresence>
   );
 }

@@ -9,10 +9,12 @@ import { fadeInBelow } from "../animations";
 const stagger = {
   animate: {
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: 0.1,
     },
   },
 };
+
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 const HomeText = () => {
   return (
@@ -44,13 +46,15 @@ const HomeText = () => {
           variants={fadeInBelow}
         >
           <Typewriter
-            onInit={(typewriter) => {
-              typewriter
-                .typeString("Student")
-                .pauseFor(2000)
-                .deleteAll()
-                .typeString("Developer")
-                .start();
+            onInit={async (typewriter) => {
+              while (true) {
+                typewriter.typeString("Student").start();
+                await sleep(4000);
+                typewriter.deleteAll().start();
+                typewriter.typeString("Developer").start();
+                await sleep(4000);
+                typewriter.deleteAll().start();
+              }
             }}
           />
         </motion.div>
