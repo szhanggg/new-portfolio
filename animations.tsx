@@ -34,4 +34,22 @@ const fadeInUp = {
   },
 };
 
-export { fadeInBelow, fadeInUp };
+const fadeInRight = {
+  initial: {
+    x: 20,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+    },
+    exit: {
+      x: 20,
+      opacity: 0,
+    },
+  },
+};
+
+export { fadeInBelow, fadeInUp, fadeInRight };

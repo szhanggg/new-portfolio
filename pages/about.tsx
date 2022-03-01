@@ -3,6 +3,8 @@ import Head from "next/head";
 import React from "react";
 import NavBar from "../components/NavBar";
 
+import AboutTitle from "../components/AboutTitle";
+
 const stagger = {
   animate: {
     transition: {
@@ -25,6 +27,9 @@ const about = () => {
       <div className="w-full h-screen  bg-gradient-to-t from-gray-900 to-gray-800 absolute -z-10"></div>
       <div className="w-full h-20 pt-8">
         <NavBar />
+      </div>
+      <div className="mt-4 w-full h-32">
+        <AboutTitle />
       </div>
     </motion.div>
   );
